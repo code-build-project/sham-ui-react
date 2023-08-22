@@ -1,0 +1,15 @@
+@import 'assets/sass/flex.sass'
+
+.layout
+    @extend %flex_row
+    height: 100%
+
+.main-block
+    flex: auto
+
+.content
+    @extend %flex_column
+    width: 100%
+    overflow-y: auto
+    max-height: calc(100vh - 64px)
+    scrollbar-gutter: stable

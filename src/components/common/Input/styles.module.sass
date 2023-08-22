@@ -1,0 +1,31 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.input
+    @extend %flex_row-center
+    border: 1px solid $color-gray-3
+    border-radius: 8px
+    padding: 0 12px
+    height: 40px
+    cursor: text
+    background: $color-gray-5
+    &:hover,
+    &_focused
+        border-color: $color-gray-2
+
+.field
+    width: 100%
+    font-weight: 500
+    font-size: 14px
+    color: $color-dark-1
+    outline: none
+    border: none
+    background: transparent
+    caret-color: $color-blue-1
+    &::placeholder
+        font-size: 14px
+        color: $color-gray-2
+
+.disabled
+    pointer-events: none
+    opacity: 0.8

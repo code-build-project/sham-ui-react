@@ -1,0 +1,41 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.header
+    @extend %flex_row-center-center
+    height: 64px
+    border: 1px solid $color-gray-3
+
+.search-wrap
+    @extend %flex_row-center-between
+    width: 785px
+    height: 100%
+
+.search
+    width: 211px
+
+.button
+    position: absolute
+    right: 12px
+    width: 211px
+    height: 40px
+    font-size: 14px
+    font-weight: 500
+    line-height: 16px
+    &-icon
+        width: 20px
+        height: 20px
+        margin-right: 8px
+        fill: $color-gray-2
+
+.like-animate
+    animation: anim 0.4s ease forwards
+
+@keyframes anim
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(0.7)
+    100%
+        transform: scale(1)
+        fill: $color-red-1

@@ -1,0 +1,69 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+    
+.sidebar
+    width: 300px
+    height: 100%
+    background: $color-dark-1
+    color: $color-white-1
+
+.header
+    @extend %flex_row-center
+    height: 64px
+    padding-left: 32px
+    font-size: 20px
+    font-weight: 600
+    border-bottom: 1px solid rgb($color-white-1, 0.08)
+
+.version
+    @extend %flex_row-center-center
+    width: 43px
+    height: 24px
+    background: rgb($color-white-1, 0.08)
+    border-radius: 55px
+    font-weight: 600
+    font-size: 12px
+    margin-left: 8px
+    line-height: 12px
+
+.components
+    padding: 0 16px 32px 16px
+    font-weight: 600
+    overflow-y: auto
+    height: calc(100% - 64px)
+    scrollbar-width: thin
+    scrollbar-color: $color-gray-1
+    &::-webkit-scrollbar
+        height: 6px
+        width: 6px
+    &::-webkit-scrollbar-thumb
+        background-color: $color-gray-1
+    &::-webkit-scrollbar-track
+        background: $color-gray-3
+    &-title
+        @extend %flex_row-start-between
+        padding: 32px 16px 10px 16px
+        margin-bottom: 8px
+        color: rgb($color-white-1, 0.24)
+        position: sticky
+        top: 0px
+        background: $color-dark-1
+    &-link
+        @extend %flex_row-center-between
+        height: 44px
+        padding: 0 16px
+        border-radius: 8px
+        &:hover
+            background: rgb($color-white-1, 0.03)
+    &-link-icon
+        width: 20px
+        height: 20px
+        fill: transparent
+    &-link_active
+        background: rgb($color-white-1, 0.08)
+        .components-link-icon
+            fill: rgb($color-white-1, 0.5)
+
+@media screen and (max-width: 1440px)
+    .sidebar
+        width: 260px
