@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "rules": {
+        "quotes": ["error", "single"],
+        "jsx-quotes": ["error", "prefer-double"],
+        "indent": ["error", 4],
+        "max-len": ["error", { "code": 140 }],
+        "semi": ["error", "always"], // Чтобы в конце были всегда точка с запятой
+        "eol-last": ["error", "never"], // Нужен ли пробел вконце документа (always - нужен, never - не нужен)
+        "comma-dangle": ["error", "always-multiline"], // Чтобы в конце всегда были запятые
+        "curly": ["error", "all"], // Чтобы всегда были фигурные скобки
+        "brace-style": ["error", "1tbs"] // Стиль фигурных скобок (первая скобка не переносится на новую строку)
+    }
+}
