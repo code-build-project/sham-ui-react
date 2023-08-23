@@ -1,0 +1,65 @@
+{
+    "error": {
+        "id": "error",
+        "elementType": "switch",
+        "title": "ERROR"
+    },
+    "clear": {
+        "id": "clear",
+        "elementType": "switch",
+        "title": "CLEARABLE",
+        "isInline": true
+    },
+    "disabled": {
+        "id": "disable1",
+        "elementType": "switch",
+        "title": "DISABLED",
+        "isInline": true
+    },
+    "listHide": {
+        "id": "listHide",
+        "elementType": "switch",
+        "title": "LIST WITHOUT VALUE",
+        "isInline": true
+    },
+    "label": { 
+        "id": "label",
+        "elementType": "input",
+        "title": "LABEL",
+        "placeholder": "Label"
+    },
+    "placeholder": { 
+        "id": "placeholder",
+        "elementType": "input",
+        "title": "PLACEHOLDER",
+        "placeholder": "Placeholder",
+        "isInline": true
+    },
+    "message": { 
+        "id": "message",
+        "elementType": "input",
+        "title": "MESSAGE",
+        "placeholder": "Message",
+        "isInline": true
+    },
+    "variant": {
+        "id": "variant",
+        "elementType": "radio",
+        "title": "VARIANT",
+        "variantList": [
+            { "id": "default", "name": "Default" },
+            { "id": "outline", "name": "Outline" },
+            { "id": "underline", "name": "Underline" }
+        ]
+    },
+    "size": { 
+        "id": "size",
+        "elementType": "radio",
+        "title": "SIZE",
+        "variantList": [
+            { "id": "small", "name": "Small" },
+            { "id": "medium", "name": "Medium" },
+            { "id": "large", "name": "Large" }
+        ]
+    }
+}

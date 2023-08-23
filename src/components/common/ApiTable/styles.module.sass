@@ -1,0 +1,64 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.title
+    font-weight: 600
+    font-size: 38px
+    color: $color-dark-1
+
+.nav
+    @extend %flex_row
+    padding-left: 10px
+    margin-top: 30px
+    &-item
+        font-size: 18px
+        color: $color-dark-1
+        margin-right: 20px
+        cursor: pointer
+    &_active
+        color: $color-blue-1
+        border-bottom: 2px solid $color-blue-1
+
+
+.table
+    width: 100%
+    color: $color-dark-1
+    border-radius: 8px
+    border: 1px solid $color-gray-3
+    margin-top: 20px
+
+.header
+    @extend %flex_row
+    border-bottom: 2px solid $color-gray-3
+    &-item
+        padding: 14px
+        flex: 1 1 0
+        font-weight: 500
+        border-right: 1px solid $color-gray-3
+        &:last-child
+            border-right: none
+
+.body
+    &-row
+        @extend %flex_row
+        border-bottom: 1px solid $color-gray-3
+    &-column
+        padding: 14px
+        flex: 1 1 0
+        border-right: 1px solid $color-gray-3
+        font-weight: 500
+        &:last-child
+            border-right: none
+    &-row-description
+        padding: 14px
+        border-bottom: 1px solid $color-gray-3
+        background: $color-gray-5
+        font-size: 17px
+        &:last-child
+            border-bottom: none
+
+.color
+    &-blue
+        color: $color-blue-1
+    &-green
+        color: $color-green-1

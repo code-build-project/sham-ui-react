@@ -15,7 +15,7 @@ function Main() {
                 </Link>
                 
                 <a
-                    href="https://github.com/code-build-project/sham-ui"
+                    href="https://github.com/code-build-project/sham-ui-react"
                     target="_blank"
                     rel="noreferrer"
                 >

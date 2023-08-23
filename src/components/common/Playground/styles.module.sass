@@ -1,0 +1,95 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+    
+.playground
+    width: 100%
+    border: 1px solid $color-gray-3
+    border-radius: 8px
+    overflow: hidden
+    background: $color-gray-5
+
+.header
+    @extend %flex_row-center-between
+    padding: 0 20px
+    height: 56px
+    color: $color-dark-1
+    font-weight: 600
+    border-bottom: 1px solid $color-gray-3
+    &-icons
+        @extend %flex_row-center-center
+
+.icon-bulb, .icon-code, .icon-git
+    width: 24px
+    height: 24px
+    fill: $color-gray-2
+    cursor: pointer
+    margin-left: 15px
+    &:hover
+        fill: $color-gray-1
+
+.icon-bulb
+    margin-top: -4px
+    margin-left: 0
+
+.field
+    @extend %flex_row-center-center
+    min-height: 168px
+    position: relative
+    background: $color-white-1
+    overflow: hidden
+    padding-right: 16px
+    &-resize
+        @extend %flex_row-center
+        width: 16px
+        height: 100%
+        background: $color-gray-5
+        border-left: 1px solid $color-gray-3
+        position: absolute
+        right: 0
+        cursor: col-resize
+        user-select: none
+    &-dark
+        background: $color-dark-1
+
+.icon-resize
+    width: 16px
+    height: 16px
+    fill: $color-gray-2
+
+.code
+    max-height: 0
+    transition: all 0.5s linear
+    overflow: hidden
+    padding: 0 15px
+    user-select: text
+    border-top: 1px solid $color-gray-3
+    position: relative
+    scrollbar-gutter: stable
+    &-template
+        margin-top: 15px
+    &_open
+        max-height: 700px
+        border-bottom: 1px solid $color-gray-3
+        animation: show-scroll 1s linear forwards
+
+@keyframes show-scroll
+    from
+        overflow: hidden
+    to
+        overflow-y: auto
+
+.parameters
+    @extend %flex_wrap
+    min-height: 176px
+    padding: 20px
+    &-radio
+        margin-right: 35px
+    &-switch
+        margin-right: 35px
+    &-input
+        width: 200px
+        margin-right: 35px
+
+.new-string
+    width: 100%
+    height: 32px
