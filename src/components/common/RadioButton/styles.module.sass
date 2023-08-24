@@ -1,0 +1,81 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.radio
+    &__title
+        font-weight: 600
+        font-size: 12px
+        color: $color-gray-2
+
+    &__button-group
+        display: flex
+        align-items: center
+        margin-top: 12px
+
+    &__button
+        display: flex
+        align-items: center
+        margin-left: 32px
+        &:first-child
+            margin-left: 0
+
+    &__input
+        opacity: 0
+        width: 0            
+
+    &__name
+        font-size: 14px
+        font-weight: 500
+        color: $color-dark-1
+        margin-left: 8px
+        cursor: pointer
+
+/* Кастомизация input c type="radio" */
+
+/* для элемента label, связанного с .custom-radio */
+.radio__input + label
+    display: inline-flex
+    align-items: center
+    user-select: none
+    padding-top: 2px
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.radio__input + label::before
+    content: ''
+    display: inline-block
+    width: 15px
+    height: 15px
+    flex-shrink: 0
+    flex-grow: 0
+    border: 1px solid $color-gray-3
+    border-radius: 50%
+    background-repeat: no-repeat
+    background-position: center center
+    cursor: pointer
+    background-color: $color-white-1
+
+.radio__input + label:hover::before
+    background-color: $color-gray-4
+
+/* стили при наведении курсора на radio */
+.radio__input:not(:disabled):not(:checked) + label:hover::before
+    border-color: $color-gray-3
+
+/* стили для активного чекбокса (при нажатии на него) */
+.radio__input:not(:disabled):active + label::before
+    background-color: $color-white-1
+    border-color: $color-gray-3
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.radio__input:focus:not(:checked) + label::before
+    border-color: $color-blue-1
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.radio__input:checked + label::before
+    border-color: $color-blue-1
+    background-color: transparent
+    background-image: url('/img/radioMark.svg')
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.radio__input:disabled + label::before
+    background-color: $color-white-3
