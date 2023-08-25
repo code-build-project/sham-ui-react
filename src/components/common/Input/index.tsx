@@ -17,6 +17,7 @@ type Props = {
     onFocus?: () => void,
     onBlur?: () => void,
     onInput?: (event: InputChangeEvent) => void,
+    updateValue?: (value: number | string) => void,
 }
  
 const defaultProps: Props = {
@@ -60,6 +61,7 @@ function Input(prevProps: Props): JSX.Element {
 
     const onInput = (event: InputChangeEvent): void => {
         props.onInput?.(event);
+        props.updateValue?.(event.target.value);
     };
 
     return (

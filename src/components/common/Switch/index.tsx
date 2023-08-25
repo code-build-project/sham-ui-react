@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import styles from 'components/common/Switch/styles.module.sass';
 
 type Props = {
+    className?: string,
     modelValue?: boolean,
     keyField: string,
     children?: string,
@@ -26,7 +27,7 @@ function Switch(prevProps: Props): JSX.Element {
     }, [props.modelValue]);
 
     return (
-        <div className={styles.switch}>
+        <div className={`${styles.switch} ${props.className}`}>
             <div className={styles['switch__title']}>
                 {props.children}
             </div>

@@ -1,27 +1,44 @@
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useRef, useMemo, Fragment } from 'react';
+import Switch from 'components/common/Switch';
+import InputTitle from 'components/common/InputTitle';
+import RadioButton from 'components/common/RadioButton';
 import { ReactComponent as IconBulb } from 'assets/icons/bulb.svg';
 import { ReactComponent as IconGithub } from 'assets/icons/github.svg';
 import { ReactComponent as IconCode } from 'assets/icons/code.svg';
 import { ReactComponent as IconResize } from 'assets/icons/resize.svg';
+import type { TypeParameter, TypeParameterValue, TypeData } from 'components/common/Playground/types';
 import styles from 'components/common/Playground/styles.module.sass';
 
-type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
-
 type Props = {
-    className?: string,
+    parameters?: TypeParameter,
     codeTemplate?: string,
+    parameterValues?: TypeParameterValue,
     gitLink?: string,
     children?: React.ReactNode,
-    onInput?: (event: InputChangeEvent) => void,
+    onChange?: (data: TypeData) => void,
 }
- 
-const defaultProps: Props = {
-    codeTemplate: '',
-    gitLink: '',
-};
 
 function Playground(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        parameters: {},
+        codeTemplate: '',
+        parameterValues: {},
+        gitLink: '',
+        ...prevProps,
+    };
+
+    // BLOCK "parameters"
+    type TypeKey = string | number;
+    type TypeValue = string | boolean | number;
+    type TypeCorrectValue = string | number | boolean | string[];
+
+    const setParameter = <T extends string | boolean>(key: TypeKey, value: TypeValue): void => {
+        props.onChange?.({ key: key as string, value: value as T });
+    };
+
+    const getValueCorrectType = <T extends unknown>(value: TypeCorrectValue): T => {
+        return value as T;
+    };
 
     // BLOCK "code show"
     const [isCodeShow, setCodeShow] = useState<boolean>(false);
@@ -114,8 +131,58 @@ function Playground(prevProps: Props): JSX.Element {
                     dangerouslySetInnerHTML={{ __html: props.codeTemplate || '' }}
                 />
             </div>
+
+            <div className={styles.parameters}>
+                {Object.keys(props.parameters).map((key, index) =>
+                    <Fragment key={props.parameters[key].id}>
+                        {(index !== 0 && !props.parameters[key].isInline) &&
+                            <div className={styles['new-string']} />
+                        }
+
+                        {props.parameters[key].elementType === 'radio' &&
+                            <RadioButton
+                                className={styles['parameters-radio']}
+                                modelValue={getValueCorrectType(props.parameterValues[key])}
+                                keyField={props.parameters[key].id}
+                                radioList={props.parameters[key].variantList}
+                                updateValue={(event) => setParameter(key, event)}
+                            >
+                                {props.parameters[key].title}
+                            </RadioButton>
+                        }
+
+                        {props.parameters[key].elementType === 'switch' &&
+                            <Switch
+                                className={styles['parameters-switch']}
+                                modelValue={getValueCorrectType(props.parameterValues[key])}
+                                keyField={props.parameters[key].id}
+                                updateValue={(event) => setParameter(key, event)}
+                            >
+                                {props.parameters[key].title}
+                            </Switch>
+                        }
+
+                        {props.parameters[key].elementType === 'input' &&
+                            <InputTitle
+                                className={styles['parameters-input']}
+                                value={getValueCorrectType(props.parameterValues[key])}
+                                placeholder={props.parameters[key].placeholder}
+                                updateValue={(event) => setParameter(key, event)}
+                            >
+                                {props.parameters[key].title}
+                            </InputTitle>
+                        }
+                    </Fragment>,
+                )}
+            </div>
         </div>
     );
 }
 
 export default Playground;
+
+// 1) Переделать modelValue на value
+// 2) Сделать все классы в квадратных скобках
+// 3) Постараться сделать все события на теге в отдельной функции сверху
+// 4) Изменить объявление дефолтных пропсов
+// 5) Поправить везде где методы срабатывают через ?.()

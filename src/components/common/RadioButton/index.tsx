@@ -6,6 +6,7 @@ interface TypeRadio {
 }
 
 type Props = {
+    className?: string,
     modelValue?: number | string,
     radioList?: TypeRadio[],
     keyField: string,
@@ -28,7 +29,7 @@ function RadioButton(prevProps: Props): JSX.Element {
     };
 
     return (
-        <div className={styles.radio}>
+        <div className={`${styles.radio} ${props.className}`}>
             <div className={styles['radio__title']}>
                 {props.children}
             </div>
