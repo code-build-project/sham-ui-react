@@ -88,8 +88,8 @@ function Playground(prevProps: Props): JSX.Element {
     };
 
     return (
-        <div className={styles.playground}>
-            <div className={styles.header}>
+        <div className={styles['playground']}>
+            <div className={styles['header']}>
                 Playground
 
                 <div className={styles['header-icons']}>
@@ -113,7 +113,7 @@ function Playground(prevProps: Props): JSX.Element {
             </div>
 
             <div
-                className={`${styles.field} ${styles[fieldClasses]}`}
+                className={`${styles['field']} ${styles[fieldClasses]}`}
                 ref={refField}
             >
                 {props.children}
@@ -126,14 +126,14 @@ function Playground(prevProps: Props): JSX.Element {
                 </div>
             </div>
 
-            <div className={`${styles.code} ${styles[codeClasses]}`}>
+            <div className={`${styles['code']} ${styles[codeClasses]}`}>
                 <div
                     className={styles['code-template']}
                     dangerouslySetInnerHTML={{ __html: props.codeTemplate || '' }}
                 />
             </div>
 
-            <div className={styles.parameters}>
+            <div className={styles['parameters']}>
                 {Object.keys(props.parameters).map((key, index) =>
                     <Fragment key={props.parameters[key].id}>
                         {(index !== 0 && !props.parameters[key].isInline) &&
@@ -143,7 +143,7 @@ function Playground(prevProps: Props): JSX.Element {
                         {props.parameters[key].elementType === 'radio' &&
                             <RadioButton
                                 className={styles['parameters-radio']}
-                                modelValue={getValueCorrectType(props.parameterValues[key])}
+                                value={getValueCorrectType(props.parameterValues[key])}
                                 keyField={props.parameters[key].id}
                                 radioList={props.parameters[key].variantList}
                                 updateValue={(event) => setParameter(key, event)}
@@ -155,7 +155,7 @@ function Playground(prevProps: Props): JSX.Element {
                         {props.parameters[key].elementType === 'switch' &&
                             <Switch
                                 className={styles['parameters-switch']}
-                                modelValue={getValueCorrectType(props.parameterValues[key])}
+                                value={getValueCorrectType(props.parameterValues[key])}
                                 keyField={props.parameters[key].id}
                                 updateValue={(event) => setParameter(key, event)}
                             >
@@ -182,8 +182,6 @@ function Playground(prevProps: Props): JSX.Element {
 
 export default Playground;
 
-// 1) Переделать modelValue на value
-// 2) Сделать все классы в квадратных скобках
 // 3) Постараться сделать все события на теге в отдельной функции сверху
 // 4) Изменить объявление дефолтных пропсов
 // 5) Поправить везде где методы срабатывают через ?.()

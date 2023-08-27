@@ -28,13 +28,13 @@ function SidebarMenu() {
     ];
 
     return (
-        <div className={styles.sidebar}>
-            <div className={styles.header}>
+        <div className={styles['sidebar']}>
+            <div className={styles['header']}>
                 <Link to="/">ShamUI</Link>
-                <div className={styles.version}>V 1.0</div>
+                <div className={styles['version']}>V 1.0</div>
             </div>
 
-            <div className={styles.components}>
+            <div className={styles['components']}>
                 <div className={styles['components-title']}>
                     <span>COMPONENTS</span>
                     <span>{links.length}</span>

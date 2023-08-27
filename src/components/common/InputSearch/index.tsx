@@ -31,7 +31,7 @@ function InputSearch(prevProps: Props): JSX.Element {
             placeholder={props.placeholder}
             onInput={onInput}
         >
-            {{ left: <IconSearch className={styles.icon} /> }}
+            {{ left: <IconSearch className={styles['icon']} /> }}
         </Input>
     );
 }

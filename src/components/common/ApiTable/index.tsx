@@ -70,10 +70,10 @@ function ApiTable(prevProps: Props): JSX.Element {
     };
 
     return (
-        <div className={styles.api}>
-            <div className={styles.title}>API</div>
+        <div className={styles['api']}>
+            <div className={styles['title']}>API</div>
 
-            <div className={styles.nav}>
+            <div className={styles['nav']}>
                 {navList().map(nav =>
                     <div
                         className={`${styles['nav-item']} ${styles[getActiveClass(nav.id)]}`}
@@ -85,8 +85,8 @@ function ApiTable(prevProps: Props): JSX.Element {
                 )}
             </div>
 
-            <div className={styles.table}>
-                <div className={styles.header}>
+            <div className={styles['table']}>
+                <div className={styles['header']}>
                     {headerList[activeNavId].map(header =>
                         <div
                             className={styles['header-item']}
@@ -97,7 +97,7 @@ function ApiTable(prevProps: Props): JSX.Element {
                     )}
                 </div>
 
-                <div className={styles.body}>
+                <div className={styles['body']}>
                     {items().map(item =>
                         <Fragment key={item.name}>
                             <div className={styles['body-row']}>

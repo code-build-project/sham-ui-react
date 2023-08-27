@@ -26,10 +26,10 @@ function InputTitle(prevProps: Props): JSX.Element {
 
     return (
         <div className={props.className}>
-            <div className={styles.title}>{props.children}</div>
+            <div className={styles['title']}>{props.children}</div>
 
             <Input
-                className={styles.input}
+                className={styles['input']}
                 value={props.value}
                 type={props.type}
                 placeholder={props.placeholder}

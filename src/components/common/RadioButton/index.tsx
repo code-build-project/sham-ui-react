@@ -7,7 +7,7 @@ interface TypeRadio {
 
 type Props = {
     className?: string,
-    modelValue?: number | string,
+    value?: number | string,
     radioList?: TypeRadio[],
     keyField: string,
     children?: string,
@@ -15,7 +15,7 @@ type Props = {
 }
  
 const defaultProps: Props = {
-    modelValue: '',
+    value: '',
     radioList: [],
     keyField: '',
     children: 'Название радиокнопки',
@@ -45,7 +45,7 @@ function RadioButton(prevProps: Props): JSX.Element {
                             id={props.keyField + item.id}
                             type="radio"
                             value={item.id}
-                            checked={props.modelValue === item.id}
+                            checked={props.value === item.id}
                             name={props.keyField + item.id}
                             onChange={() => updateValue(item.id)}
                         />

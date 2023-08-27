@@ -66,13 +66,13 @@ function Input(prevProps: Props): JSX.Element {
 
     return (
         <div
-            className={`${styles.input} ${styles[inputClasses]} ${props.className}`}
+            className={`${styles['input']} ${styles[inputClasses]} ${props.className}`}
             onClick={clickInput}
         >
             {props.children?.left}
 
             <input
-                className={styles.field}
+                className={styles['field']}
                 ref={inputRef}
                 value={props.value}
                 type={props.type}

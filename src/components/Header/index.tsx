@@ -12,10 +12,10 @@ function Header() {
     const iconClasses = useMemo(() => isLike ? 'like-animate' : '', [isLike]);
 
     return (
-        <div className={styles.header}>
+        <div className={styles['header']}>
             <div className={styles['search-wrap']}>
                 <InputSearch
-                    className={styles.search}
+                    className={styles['search']}
                     value={value}
                     placeholder="Search"
                     onInput={(event) => setValue(event.target.value)}

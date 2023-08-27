@@ -5,7 +5,7 @@ import styles from 'layouts/MainLayout/styles.module.sass';
 
 function MainLayout() {
     return (
-        <div className={styles.layout}>
+        <div className={styles['layout']}>
             <SidebarMenu />
 
             <main className={styles['main-block']}>

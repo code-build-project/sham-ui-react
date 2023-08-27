@@ -16,7 +16,7 @@ function Button(prevProps: Props): JSX.Element {
 
     return (
         <button
-            className={`${styles.button} ${props.className}`}
+            className={`${styles['button']} ${props.className}`}
             onClick={props.onClick}
         >
             {props.children}

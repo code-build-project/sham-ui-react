@@ -5,11 +5,11 @@ import styles from 'pages/Main.module.sass';
 
 function Main() {
     return (
-        <div className={styles.main}>
-            <div className={styles.banner}>ShamUI</div>
-            <div className={styles.title}>React Component Library</div>
+        <div className={styles['main']}>
+            <div className={styles['banner']}>ShamUI</div>
+            <div className={styles['title']}>React Component Library</div>
 
-            <div className={styles.buttons}>
+            <div className={styles['buttons']}>
                 <Link to="/autocomplete">
                     <Button className={styles['button-start']}>GET STARTED</Button>
                 </Link>
@@ -20,7 +20,7 @@ function Main() {
                     rel="noreferrer"
                 >
                     <Button className={styles['button-git']}>
-                        <IconGithub className={styles.icon} />
+                        <IconGithub className={styles['icon']} />
                         GITHUB
                     </Button>
                 </a>
