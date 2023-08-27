@@ -8,18 +8,17 @@ type Props = {
     children?: string,
     updateValue?: (value: boolean) => void,
 }
- 
-const defaultProps: Props = {
-    value: false,
-    keyField: '',
-    children: 'Название радиокнопки',
-};
 
 function Switch(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        value: false,
+        children: 'Название радиокнопки',
+        updateValue: () => {},
+        ...prevProps,
+    };
 
     const updateValue = (value: boolean): void => {
-        props.updateValue?.(value);
+        props.updateValue(value);
     };
 
     const componentClasses = useMemo(() => {

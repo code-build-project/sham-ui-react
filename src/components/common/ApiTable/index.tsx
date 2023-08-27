@@ -3,19 +3,18 @@ import styles from 'components/common/ApiTable/styles.module.sass';
 import type { TypeTableProp, TypeTableEvent, TypeTableSlot } from 'components/common/ApiTable/types';
 
 type Props = {
-    propList: TypeTableProp[],
-    eventList: TypeTableEvent[],
-    slotList: TypeTableSlot[],
+    propList?: TypeTableProp[],
+    eventList?: TypeTableEvent[],
+    slotList?: TypeTableSlot[],
 }
- 
-const defaultProps: Props = {
-    propList: [],
-    eventList: [],
-    slotList: [],
-};
 
 function ApiTable(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        propList: [],
+        eventList: [],
+        slotList: [],
+        ...prevProps,
+    };
 
     // BLOCK "nav"
     type TypeNav = {

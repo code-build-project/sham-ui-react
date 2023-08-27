@@ -19,19 +19,22 @@ type Props = {
     onInput?: (event: InputChangeEvent) => void,
     updateValue?: (value: number | string) => void,
 }
- 
-const defaultProps: Props = {
-    value: '',
-    type: 'text',
-    placeholder: '',
-    isDisabled: false,
-    isReadonly: false,
-    maxlength: undefined,
-    autocomplete: 'on',
-};
 
 function Input(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        value: '',
+        type: 'text',
+        placeholder: '',
+        isDisabled: false,
+        isReadonly: false,
+        maxlength: undefined,
+        autocomplete: 'on',
+        onFocus: () => {},
+        onBlur: () => {},
+        onInput: () => {},
+        updateValue: () => {},
+        ...prevProps,
+    };
 
     // BLOCK "focus and blur"
     const [isFocus, setFocus] = useState<boolean>(false);
@@ -43,12 +46,12 @@ function Input(prevProps: Props): JSX.Element {
 
     const onFocus = () => {
         setFocus(true);
-        props.onFocus?.();
+        props.onFocus();
     };
 
     const onBlur = () => {
         setFocus(false);
-        props.onBlur?.();
+        props.onBlur();
     };
 
     // BLOCK "input"
@@ -60,8 +63,8 @@ function Input(prevProps: Props): JSX.Element {
     }, [isFocus, props.isDisabled]);
 
     const onInput = (event: InputChangeEvent): void => {
-        props.onInput?.(event);
-        props.updateValue?.(event.target.value);
+        props.onInput(event);
+        props.updateValue(event.target.value);
     };
 
     return (

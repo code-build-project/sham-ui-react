@@ -11,17 +11,17 @@ type Props = {
     placeholder?: string,
     onInput?: (event: InputChangeEvent) => void,
 }
- 
-const defaultProps: Props = {
-    value: '',
-    placeholder: '',
-};
 
 function InputSearch(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        value: '',
+        placeholder: '',
+        onInput: () => {},
+        ...prevProps,
+    };
 
     const onInput = (event: InputChangeEvent): void => {
-        props.onInput?.(event);
+        props.onInput(event);
     };
 
     return (

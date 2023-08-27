@@ -13,19 +13,18 @@ type Props = {
     children?: string,
     updateValue?: (value: number | string) => void,
 }
- 
-const defaultProps: Props = {
-    value: '',
-    radioList: [],
-    keyField: '',
-    children: 'Название радиокнопки',
-};
 
 function RadioButton(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        value: '',
+        radioList: [],
+        children: 'Название радиокнопки',
+        updateValue: () => {},
+        ...prevProps,
+    };
 
     const updateValue = (value: number | string): void => {
-        props.updateValue?.(value);
+        props.updateValue(value);
     };
 
     return (
@@ -35,7 +34,7 @@ function RadioButton(prevProps: Props): JSX.Element {
             </div>
 
             <div className={styles['button-group']}>
-                {props.radioList?.map(item =>
+                {props.radioList.map(item =>
                     <div
                         className={styles['button']}
                         key={props.keyField + item.id}

@@ -6,13 +6,12 @@ type Props = {
     children?: React.ReactNode,
     onClick?: React.MouseEventHandler<HTMLButtonElement>,
 }
- 
-const defaultProps: Props = {
-    children: 'Button',
-};
 
 function Button(prevProps: Props): JSX.Element {
-    const props = { ...defaultProps, ...prevProps };
+    const props = {
+        children: 'Button',
+        ...prevProps,
+    };
 
     return (
         <button

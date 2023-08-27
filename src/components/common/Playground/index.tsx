@@ -24,6 +24,7 @@ function Playground(prevProps: Props): JSX.Element {
         codeTemplate: '',
         parameterValues: {},
         gitLink: '',
+        onChange: () => {},
         ...prevProps,
     };
 
@@ -33,7 +34,7 @@ function Playground(prevProps: Props): JSX.Element {
     type TypeCorrectValue = string | number | boolean | string[];
 
     const setParameter = <T extends string | boolean>(key: TypeKey, value: TypeValue): void => {
-        props.onChange?.({ key: key as string, value: value as T });
+        props.onChange({ key: key as string, value: value as T });
     };
 
     const getValueCorrectType = <T extends unknown>(value: TypeCorrectValue): T => {
@@ -183,5 +184,3 @@ function Playground(prevProps: Props): JSX.Element {
 export default Playground;
 
 // 3) Постараться сделать все события на теге в отдельной функции сверху
-// 4) Изменить объявление дефолтных пропсов
-// 5) Поправить везде где методы срабатывают через ?.()
