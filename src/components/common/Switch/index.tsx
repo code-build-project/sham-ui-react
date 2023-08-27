@@ -27,20 +27,23 @@ function Switch(prevProps: Props): JSX.Element {
     }, [props.modelValue]);
 
     return (
-        <div className={`${styles.switch} ${props.className}`}>
-            <div className={styles['switch__title']}>
+        <div className={props.className}>
+            <div className={styles['title']}>
                 {props.children}
             </div>
 
             <input
-                className={`${styles['switch__input']} ${styles[componentClasses]}`}
+                className={`${styles['input']} ${styles[componentClasses]}`}
                 id={props.keyField}
                 type="checkbox"
                 checked={props.modelValue}
                 onChange={() => updateValue(!props.modelValue)}
             />
 
-            <label htmlFor={props.keyField} />
+            <label
+                className={styles['label']}
+                htmlFor={props.keyField}
+            />
         </div>
     );
 }

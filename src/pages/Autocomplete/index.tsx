@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import { useState } from 'react';
 import PageWrap from 'components/PageWrap';
 import Playground from 'components/common/Playground';
 import ApiTable from 'components/common/ApiTable';
@@ -44,15 +44,21 @@ function Autocomplete() {
         <PageWrap>
             {{
                 title: 'Autocomplete',
-                text: `
-                    Компонент <b>sh-autocomplete</b> представляет функциональность
-                    предопределённого варианта выбора для пользователя.
-                    Пользователь может выбрать опцию из списка вместо того, чтобы вводить её вручную.
-                `,
+                text:
+                    <>
+                        Компонент <b>sh-autocomplete</b> представляет функциональность
+                        предопределённого варианта выбора для пользователя.
+                        Пользователь может выбрать опцию из списка вместо того, чтобы вводить её вручную.
+                    </>,
                 playground:
                     <Playground
+                        parameters={parameters}
+                        codeTemplate={codeAutocomplete}
+                        parameterValues={data}
                         gitLink={gitLink}
-                    />,
+                    >
+                        Тут будет элемент
+                    </Playground>,
                 apiTable:
                     <ApiTable
                         propList={api.propList}

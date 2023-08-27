@@ -1,20 +1,19 @@
 @import 'assets/sass/flex.sass'
 @import 'assets/sass/colors.sass'
 
-.switch
-    &__title
-        font-weight: 600
-        font-size: 12px
-        color: $color-gray-2
+.title
+    font-weight: 600
+    font-size: 12px
+    color: $color-gray-2
 
-    &__input
-        height: 0
-        width: 0
-        visibility: hidden     
+.input
+    height: 0
+    width: 0
+    visibility: hidden     
 
 /* Кастомизация input c type="checkbox" */
 
-label
+.label
     cursor: pointer
     text-indent: -9999px
     width: 40px
@@ -25,7 +24,7 @@ label
     border-radius: 10px
     position: relative
 
-label:after
+.label:after
     content: ''
     position: absolute
     top: 3px
@@ -36,12 +35,12 @@ label:after
     border-radius: 10px
     transition: 0.3s
 
-.input_checked + label
+.input_checked + .label
     background: $color-blue-1
 
-.input_checked + label:after
+.input_checked + .label:after
     left: calc(100% - 3px)
     transform: translateX(-100%)
 
-label:active:after
+.label:active:after
     width: 17px

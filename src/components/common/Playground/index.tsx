@@ -3,11 +3,11 @@ import Switch from 'components/common/Switch';
 import InputTitle from 'components/common/InputTitle';
 import RadioButton from 'components/common/RadioButton';
 import { ReactComponent as IconBulb } from 'assets/icons/bulb.svg';
-import { ReactComponent as IconGithub } from 'assets/icons/github.svg';
 import { ReactComponent as IconCode } from 'assets/icons/code.svg';
+import { ReactComponent as IconGithub } from 'assets/icons/github.svg';
 import { ReactComponent as IconResize } from 'assets/icons/resize.svg';
-import type { TypeParameter, TypeParameterValue, TypeData } from 'components/common/Playground/types';
 import styles from 'components/common/Playground/styles.module.sass';
+import type { TypeParameter, TypeParameterValue, TypeData } from 'components/common/Playground/types';
 
 type Props = {
     parameters?: TypeParameter,
@@ -98,6 +98,7 @@ function Playground(prevProps: Props): JSX.Element {
                         onClick={setTheme}
                     />
                     <a
+                        className={styles['icon-git-link']}
                         href={props.gitLink}
                         target="_blank"
                         rel="noreferrer"

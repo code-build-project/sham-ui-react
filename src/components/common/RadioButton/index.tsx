@@ -29,19 +29,19 @@ function RadioButton(prevProps: Props): JSX.Element {
     };
 
     return (
-        <div className={`${styles.radio} ${props.className}`}>
-            <div className={styles['radio__title']}>
+        <div className={props.className}>
+            <div className={styles['title']}>
                 {props.children}
             </div>
 
-            <div className={styles['radio__button-group']}>
+            <div className={styles['button-group']}>
                 {props.radioList?.map(item =>
                     <div
-                        className={styles['radio__button']}
-                        key={item.id}
+                        className={styles['button']}
+                        key={props.keyField + item.id}
                     >
                         <input
-                            className={styles['radio__input']}
+                            className={styles['input']}
                             id={props.keyField + item.id}
                             type="radio"
                             value={item.id}
@@ -51,12 +51,12 @@ function RadioButton(prevProps: Props): JSX.Element {
                         />
 
                         <label
-                            className={styles['radio__label']}
+                            className={styles['label']}
                             htmlFor={props.keyField + item.id}
                         />
 
                         <div
-                            className={styles['radio__name']}
+                            className={styles['name']}
                             onClick={() => updateValue(item.id)}
                         >
                             {item.name}

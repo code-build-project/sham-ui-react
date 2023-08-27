@@ -25,7 +25,7 @@ function InputTitle(prevProps: Props): JSX.Element {
     };
 
     return (
-        <div>
+        <div className={props.className}>
             <div className={styles.title}>{props.children}</div>
 
             <Input

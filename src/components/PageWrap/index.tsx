@@ -4,7 +4,7 @@ import styles from 'components/PageWrap/styles.module.sass';
 type Props = {
     children?: {
         title?: string,
-        text?: string,
+        text?: ReactNode,
         playground?: ReactNode,
         apiTable: ReactNode
     },
