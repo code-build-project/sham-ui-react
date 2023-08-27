@@ -6,6 +6,7 @@ import styles from 'pages/Autocomplete/styles.module.sass';
 import codeAutocomplete from 'components/UI/ShAutocomplete/code';
 import apiJSON from 'pages/Autocomplete/api.json';
 import parametersJSON from 'pages/Autocomplete/parameters.json';
+import { setValue } from 'helpers/playground';
 import type { TypeApiTable } from 'components/common/ApiTable/types';
 import type { TypeParameter } from 'components/common/Playground/types';
 
@@ -13,7 +14,7 @@ const api: TypeApiTable = apiJSON;
 const parameters: TypeParameter = parametersJSON;
 const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShAutocomplete/index.vue';
 
-type TypeData = {
+type TypeState = {
     modelValue: string,
     placeholder: string,
     disabled: boolean,
@@ -27,7 +28,7 @@ type TypeData = {
 }
 
 function Autocomplete() {
-    const [data, setData] = useState<TypeData>({
+    const [state, setState] = useState<TypeState>({
         modelValue: '',
         placeholder: 'My Autocomplete',
         disabled: false,
@@ -54,10 +55,11 @@ function Autocomplete() {
                     <Playground
                         parameters={parameters}
                         codeTemplate={codeAutocomplete}
-                        parameterValues={data}
+                        parameterValues={state}
                         gitLink={gitLink}
+                        onChange={(event) => setValue(event, state, setState)}
                     >
-                        Тут будет элемент
+                        <div className={styles['autocomplete']}>Тут будет элемент</div>
                     </Playground>,
                 apiTable:
                     <ApiTable

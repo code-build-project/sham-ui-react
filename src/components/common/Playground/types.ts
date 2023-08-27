@@ -18,7 +18,7 @@ export interface TypeParameterValue {
     [name: string]: string | number | boolean | string[],
 }
 
-export interface TypeData {
+export interface TypeChangeData {
     key: string,
     value: string | boolean,
 }

@@ -99,7 +99,7 @@ function ApiTable(prevProps: Props): JSX.Element {
 
                 <div className={styles.body}>
                     {items().map(item =>
-                        <Fragment key={item.id}>
+                        <Fragment key={item.name}>
                             <div className={styles['body-row']}>
                                 {headerList[activeNavId].map(header =>
                                     <div

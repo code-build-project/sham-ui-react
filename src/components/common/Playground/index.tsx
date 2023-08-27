@@ -7,7 +7,7 @@ import { ReactComponent as IconCode } from 'assets/icons/code.svg';
 import { ReactComponent as IconGithub } from 'assets/icons/github.svg';
 import { ReactComponent as IconResize } from 'assets/icons/resize.svg';
 import styles from 'components/common/Playground/styles.module.sass';
-import type { TypeParameter, TypeParameterValue, TypeData } from 'components/common/Playground/types';
+import type { TypeParameter, TypeParameterValue, TypeChangeData } from 'components/common/Playground/types';
 
 type Props = {
     parameters?: TypeParameter,
@@ -15,7 +15,7 @@ type Props = {
     parameterValues?: TypeParameterValue,
     gitLink?: string,
     children?: React.ReactNode,
-    onChange?: (data: TypeData) => void,
+    onChange?: (data: TypeChangeData) => void,
 }
 
 function Playground(prevProps: Props): JSX.Element {
