@@ -1,4 +1,4 @@
-import React, { useState, useRef, useMemo, Fragment } from 'react';
+import React, { useState, useRef, Fragment } from 'react';
 import Switch from 'components/common/Switch';
 import InputTitle from 'components/common/InputTitle';
 import RadioButton from 'components/common/RadioButton';
@@ -44,9 +44,7 @@ function Playground(prevProps: Props): JSX.Element {
     // BLOCK "code show"
     const [isCodeShow, setCodeShow] = useState<boolean>(false);
 
-    const codeClasses = useMemo(() => {
-        return isCodeShow ? 'code_open' : '';
-    }, [isCodeShow]);
+    const codeClasses = isCodeShow ? 'code_open' : '';
 
     const showCode = (): void => {
         setCodeShow(!isCodeShow);
@@ -59,9 +57,7 @@ function Playground(prevProps: Props): JSX.Element {
         setLight(!isLight);
     };
 
-    const fieldClasses = useMemo(() => {
-        return isLight ? 'field-dark' : '';
-    }, [isLight]);
+    const fieldClasses = isLight ? 'field-dark' : '';
 
     // BLOCK "field resize"
     const refField = useRef<HTMLInputElement>(null);
@@ -182,5 +178,3 @@ function Playground(prevProps: Props): JSX.Element {
 }
 
 export default Playground;
-
-// 3) Постараться сделать все события на теге в отдельной функции сверху

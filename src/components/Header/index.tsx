@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import Button from 'components/common/Button';
 import InputSearch from 'components/common/InputSearch';
 import { ReactComponent as IconHeart } from 'assets/icons/heart.svg';
@@ -9,7 +9,7 @@ function Header() {
 
     const [value, setValue] = useState<string>('');
 
-    const iconClasses = useMemo(() => isLike ? 'like-animate' : '', [isLike]);
+    const iconClasses = isLike ? 'like-animate' : '';
 
     return (
         <div className={styles['header']}>

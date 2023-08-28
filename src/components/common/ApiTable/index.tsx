@@ -41,12 +41,14 @@ function ApiTable(prevProps: Props): JSX.Element {
 
     // BLOCK "header"
     type TypeHeader = {
-        id: string,
-        title: string,
-        color?: string,
+        [name: string]: {
+            id: string,
+            title: string,
+            color?: string,
+        }[]
     }
 
-    const headerList: { [name: string]: TypeHeader[] } = {
+    const headerList: TypeHeader = {
         propList: [
             { id: 'name', title: 'Name', color: 'blue' },
             { id: 'type', title: 'Type', color: 'green' },

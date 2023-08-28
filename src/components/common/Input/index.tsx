@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from 'components/common/Input/styles.module.sass';
 
 type InputChangeEvent = React.ChangeEvent<HTMLInputElement>;
@@ -55,12 +55,12 @@ function Input(prevProps: Props): JSX.Element {
     };
 
     // BLOCK "input"
-    const inputClasses = useMemo(() => {
+    const inputClasses = (() => {
         const focusClass = isFocus ? 'input_focused' : '';
         const disabledClass = props.isDisabled ? 'input_focused' : '';
 
         return focusClass + disabledClass;
-    }, [isFocus, props.isDisabled]);
+    })();
 
     const onInput = (event: InputChangeEvent): void => {
         props.onInput(event);

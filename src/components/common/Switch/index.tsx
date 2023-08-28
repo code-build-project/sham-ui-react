@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import styles from 'components/common/Switch/styles.module.sass';
 
 type Props = {
@@ -21,9 +20,7 @@ function Switch(prevProps: Props): JSX.Element {
         props.updateValue(value);
     };
 
-    const componentClasses = useMemo(() => {
-        return props.value ? 'input_checked' : '';
-    }, [props.value]);
+    const componentClasses = props.value ? 'input_checked' : '';
 
     return (
         <div className={props.className}>
