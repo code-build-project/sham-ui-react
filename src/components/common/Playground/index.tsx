@@ -44,7 +44,10 @@ function Playground(prevProps: Props): JSX.Element {
     // BLOCK "code show"
     const [isCodeShow, setCodeShow] = useState<boolean>(false);
 
-    const codeClasses = isCodeShow ? 'code_open' : '';
+    const codeClasses = `
+        ${styles['code']}
+        ${isCodeShow && 'code_open'}
+    `;
 
     const showCode = (): void => {
         setCodeShow(!isCodeShow);
@@ -57,7 +60,10 @@ function Playground(prevProps: Props): JSX.Element {
         setLight(!isLight);
     };
 
-    const fieldClasses = isLight ? 'field-dark' : '';
+    const fieldClasses = `
+        ${styles['field']}
+        ${isLight && 'field-dark'}
+    `;
 
     // BLOCK "field resize"
     const refField = useRef<HTMLInputElement>(null);
@@ -110,7 +116,7 @@ function Playground(prevProps: Props): JSX.Element {
             </div>
 
             <div
-                className={`${styles['field']} ${styles[fieldClasses]}`}
+                className={fieldClasses}
                 ref={refField}
             >
                 {props.children}
@@ -123,7 +129,7 @@ function Playground(prevProps: Props): JSX.Element {
                 </div>
             </div>
 
-            <div className={`${styles['code']} ${styles[codeClasses]}`}>
+            <div className={codeClasses}>
                 <div
                     className={styles['code-template']}
                     dangerouslySetInnerHTML={{ __html: props.codeTemplate || '' }}

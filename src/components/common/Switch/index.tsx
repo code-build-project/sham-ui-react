@@ -20,7 +20,10 @@ function Switch(prevProps: Props): JSX.Element {
         props.updateValue(value);
     };
 
-    const componentClasses = props.value ? 'input_checked' : '';
+    const inputClasses = `
+        ${styles['input']}
+        ${props.value && styles['input_checked']}
+    `;
 
     return (
         <div className={props.className}>
@@ -29,7 +32,7 @@ function Switch(prevProps: Props): JSX.Element {
             </div>
 
             <input
-                className={`${styles['input']} ${styles[componentClasses]}`}
+                className={inputClasses}
                 id={props.keyField}
                 type="checkbox"
                 checked={props.value}

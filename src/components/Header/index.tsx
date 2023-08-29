@@ -9,7 +9,10 @@ function Header() {
 
     const [value, setValue] = useState<string>('');
 
-    const iconClasses = isLike ? 'like-animate' : '';
+    const iconClasses = `
+        ${styles['button-icon']}
+        ${isLike && styles['like-animate']}
+    `;
 
     return (
         <div className={styles['header']}>
@@ -26,7 +29,7 @@ function Header() {
                 className={styles['button']}
                 onClick={() => setLike(true)}
             >
-                <IconHeart className={`${styles['button-icon']} ${styles[iconClasses]}`} />
+                <IconHeart className={iconClasses} />
                 Сказать спасибо автору
             </Button>
         </div>

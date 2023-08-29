@@ -55,12 +55,12 @@ function Input(prevProps: Props): JSX.Element {
     };
 
     // BLOCK "input"
-    const inputClasses = (() => {
-        const focusClass = isFocus ? 'input_focused' : '';
-        const disabledClass = props.isDisabled ? 'input_focused' : '';
-
-        return focusClass + disabledClass;
-    })();
+    const inputClasses = `
+        ${styles['input']}
+        ${isFocus && styles['input_focused']}
+        ${props.isDisabled && styles['disabled']}
+        ${props.className}
+    `;
 
     const onInput = (event: InputChangeEvent): void => {
         props.onInput(event);
@@ -69,7 +69,7 @@ function Input(prevProps: Props): JSX.Element {
 
     return (
         <div
-            className={`${styles['input']} ${styles[inputClasses]} ${props.className}`}
+            className={inputClasses}
             onClick={clickInput}
         >
             {props.children?.left}

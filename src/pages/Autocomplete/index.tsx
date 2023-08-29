@@ -2,20 +2,23 @@ import { useState } from 'react';
 import PageWrap from 'components/PageWrap';
 import Playground from 'components/common/Playground';
 import ApiTable from 'components/common/ApiTable';
+import UIAutocomplete from 'components/UI/Autocomplete';
 import styles from 'pages/Autocomplete/styles.module.sass';
-import codeAutocomplete from 'components/UI/ShAutocomplete/code';
+import codeAutocomplete from 'components/UI/Autocomplete/code';
 import apiJSON from 'pages/Autocomplete/api.json';
+import optionsJSON from 'pages/Autocomplete/options.json';
 import parametersJSON from 'pages/Autocomplete/parameters.json';
 import { setValue } from 'helpers/playground';
 import type { TypeApiTable } from 'components/common/ApiTable/types';
 import type { TypeParameter } from 'components/common/Playground/types';
 
 const api: TypeApiTable = apiJSON;
+const options: string[] = optionsJSON;
 const parameters: TypeParameter = parametersJSON;
 const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShAutocomplete/index.vue';
 
 type TypeState = {
-    modelValue: string,
+    value: string,
     placeholder: string,
     disabled: boolean,
     clear: boolean,
@@ -29,7 +32,7 @@ type TypeState = {
 
 function Autocomplete() {
     const [state, setState] = useState<TypeState>({
-        modelValue: '',
+        value: '',
         placeholder: 'My Autocomplete',
         disabled: false,
         clear: false,
@@ -59,7 +62,19 @@ function Autocomplete() {
                         gitLink={gitLink}
                         onChange={(event) => setValue(event, state, setState)}
                     >
-                        <div className={styles['autocomplete']}>Тут будет элемент</div>
+                        <UIAutocomplete
+                            className={styles['autocomplete']}
+                            value={state.value}
+                            placeholder={state.placeholder}
+                            isDisabled={state.disabled}
+                            isClearable={state.clear}
+                            message={state.message}
+                            size={state.size}
+                            variant={state.variant}
+                            isError={state.error}
+                            isListWithoutValue={state.listHide}
+                            options={options}
+                        />
                     </Playground>,
                 apiTable:
                     <ApiTable
