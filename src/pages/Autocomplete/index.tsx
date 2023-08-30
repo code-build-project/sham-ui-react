@@ -44,6 +44,15 @@ function Autocomplete() {
         listHide: true,
     });
 
+    const updateValue = (value: number | string): void => {
+        const event = {
+            key: 'value',
+            value: value as string,
+        };
+
+        setValue(event, state, setState);
+    };
+
     return (
         <PageWrap>
             {{
@@ -74,7 +83,10 @@ function Autocomplete() {
                             isError={state.error}
                             isListWithoutValue={state.listHide}
                             options={options}
-                        />
+                            updateValue={updateValue}
+                        >
+                            {state.label}
+                        </UIAutocomplete>
                     </Playground>,
                 apiTable:
                     <ApiTable

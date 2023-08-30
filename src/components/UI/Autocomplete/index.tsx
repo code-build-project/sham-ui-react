@@ -1,10 +1,11 @@
+import React, { useState } from 'react';
 import Input from 'components/common/Input';
+import { ReactComponent as IconClearField } from 'assets/icons/clearField.svg';
 import styles from 'components/UI/Autocomplete/styles.module.sass';
 
 type Props = {
     className?: string,
     value?: string,
-    label?: string,
     placeholder?: string,
     isDisabled?: boolean,
     isClearable?: boolean,
@@ -14,14 +15,15 @@ type Props = {
     isError?: boolean,
     isListWithoutValue?: boolean,
     options?: string[],
-    children?: { label: string },
-    updateValue?: (value: boolean) => void,
+    children?: string,
+    onFocus?: () => void,
+    onBlur?: () => void,
+    updateValue?: (value: number | string) => void,
 }
 
 function Autocomplete(prevProps: Props): JSX.Element {
     const props = {
         value: '',
-        label: '',
         placeholder: '',
         isDisabled: false,
         isClearable: false,
@@ -31,7 +33,9 @@ function Autocomplete(prevProps: Props): JSX.Element {
         isError: false,
         isListWithoutValue: true,
         options: [],
-        children: { label: '' },
+        children: '',
+        onFocus: () => {},
+        onBlur: () => {},
         updateValue: () => {},
         ...prevProps,
     };
@@ -42,22 +46,90 @@ function Autocomplete(prevProps: Props): JSX.Element {
         ${props.isError && styles['error']}
     `;
 
-    // BLOCK "label"
-    const isLabel: boolean = !!props.label;
+    const updateValue = (value: number | string): void => {
+        props.updateValue(value);
+    };
+
+    // BLOCK "focus and blur"
+    const [isFocus, setFocus] = useState<boolean>(false);
+
+    const onFocus = () => {
+        setFocus(true);
+        props.onFocus();
+    };
+
+    const onBlur = () => {
+        setTimeout(() => {
+            setFocus(false);
+            props.onBlur();
+        }, 100);
+    };
+
+    // BLOCK "list"
+    const filteredOptions = props.options.filter((option) => {
+        return option.toUpperCase().startsWith(props.value.toUpperCase());
+    });
+
+    const isShowList = (() => {
+        if (props.isListWithoutValue) {
+            return !!(isFocus && filteredOptions.length);
+        } else {
+            return !!(isFocus && filteredOptions.length && props.value);
+        }
+    })();
+
+    // BLOCK "clear"
+    const isIconClear = props.isClearable && props.value;
+
+    function clearField(event: React.MouseEvent<SVGSVGElement, MouseEvent>) {
+        event.stopPropagation();
+        updateValue('');
+    }
 
     return (
         <div className={`${styles['autocomplete']} ${props.className}`}>
-            {isLabel &&
+            {props.children &&
                 <div className={styles['label']}>
-                    {props.label}
+                    {props.children}
                 </div>
             }
+
             <Input
                 className={componentClasses}
                 value={props.value}
                 placeholder={props.placeholder}
                 isDisabled={props.isDisabled}
-            />
+                onBlur={onBlur}
+                onFocus={onFocus}
+                updateValue={updateValue}
+            >
+                {{ right: isIconClear &&
+                    <IconClearField
+                        className={styles['icon-clear']}
+                        onClick={clearField}
+                    />,
+                }}
+            </Input>
+
+            {props.message &&
+                <div className={styles['message']}>
+                    {props.message}
+                </div>
+            }
+
+            {isShowList &&
+                <ul className={styles['list']}>
+                    {filteredOptions.map((option, index) =>
+                        <li
+                            className={styles['item']}
+                            key={option + index}
+                            onClick={() => updateValue(option)}
+                        >
+                            {option}
+                        </li>,
+                    )}
+                </ul>
+            }
         </div>
     );
 }
