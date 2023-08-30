@@ -46,7 +46,7 @@ function Playground(prevProps: Props): JSX.Element {
 
     const codeClasses = `
         ${styles['code']}
-        ${isCodeShow && 'code_open'}
+        ${isCodeShow && styles['code_open']}
     `;
 
     const showCode = (): void => {
@@ -62,7 +62,7 @@ function Playground(prevProps: Props): JSX.Element {
 
     const fieldClasses = `
         ${styles['field']}
-        ${isLight && 'field-dark'}
+        ${isLight && styles['field-dark']}
     `;
 
     // BLOCK "field resize"

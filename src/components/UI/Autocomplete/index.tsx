@@ -6,6 +6,7 @@ import styles from 'components/UI/Autocomplete/styles.module.sass';
 type Props = {
     className?: string,
     value?: string,
+    label?: string,
     placeholder?: string,
     isDisabled?: boolean,
     isClearable?: boolean,
@@ -24,6 +25,7 @@ type Props = {
 function Autocomplete(prevProps: Props): JSX.Element {
     const props = {
         value: '',
+        label: '',
         placeholder: '',
         isDisabled: false,
         isClearable: false,
@@ -49,6 +51,9 @@ function Autocomplete(prevProps: Props): JSX.Element {
     const updateValue = (value: number | string): void => {
         props.updateValue(value);
     };
+
+    // BLOCK "label"
+    const isLabel = props.children || props.label;
 
     // BLOCK "focus and blur"
     const [isFocus, setFocus] = useState<boolean>(false);
@@ -88,9 +93,9 @@ function Autocomplete(prevProps: Props): JSX.Element {
 
     return (
         <div className={`${styles['autocomplete']} ${props.className}`}>
-            {props.children &&
+            {isLabel &&
                 <div className={styles['label']}>
-                    {props.children}
+                    {props.children || props.label}
                 </div>
             }
 
