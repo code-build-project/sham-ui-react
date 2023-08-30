@@ -1,0 +1,48 @@
+{
+    "propList": [
+        {
+            "name": "is-loading",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг переключения прелоадера"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "size",
+            "type": "small | medium | large",
+            "default": "medium",
+            "description": "Размер компонента"
+        },
+        {
+            "name": "variant",
+            "type": "default | outline | text",
+            "default": "default",
+            "description": "Вариант внешнего вида компонента"
+        },
+        {
+            "name": "type",
+            "type": "default | primary | light | danger | success",
+            "default": "primary",
+            "description": "Тип цвета компонента"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@click",
+            "parameters": "void",
+            "description": "Событие срабатывает при клике на компонент"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "Button",
+            "description": "Дефолтный слот, для передачи значения названия компонента"
+        }
+    ]
+}

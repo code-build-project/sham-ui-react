@@ -1,0 +1,52 @@
+{
+    "text": { 
+        "id": "text",
+        "elementType": "input",
+        "title": "TEXT",
+        "placeholder": "My Button"
+    },
+    "loading": {
+        "id": "loading",
+        "elementType": "switch",
+        "title": "LOADING"
+    },
+    "disabled": {
+        "id": "disable",
+        "elementType": "switch",
+        "title": "DISABLED",
+        "isInline": true
+    },
+    "variant": {
+        "id": "variant",
+        "elementType": "radio",
+        "title": "VARIANT",
+        "variantList": [
+            { "id": "default", "name": "Default" },
+            { "id": "outline", "name": "Outline" },
+            { "id": "text", "name": "Text" }
+        ]
+    },
+    "type": {
+        "id": "type",
+        "elementType": "radio",
+        "title": "TYPE",
+        "value": "primary",
+        "variantList": [
+            { "id": "default", "name": "Default" },
+            { "id": "primary", "name": "Primary" },
+            { "id": "light", "name": "Light" },
+            { "id": "danger", "name": "Danger" },
+            { "id": "success", "name": "Success" }
+        ]
+    },
+    "size": { 
+        "id": "size",
+        "elementType": "radio",
+        "title": "SIZE",
+        "variantList": [
+            { "id": "small", "name": "Small" },
+            { "id": "medium", "name": "Medium" },
+            { "id": "large", "name": "Large" }
+        ]
+    }
+}

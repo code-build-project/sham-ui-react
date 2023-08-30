@@ -2,6 +2,7 @@ import Main from 'pages/Main';
 import MainLayout from 'layouts/MainLayout';
 import Autocomplete from 'pages/Autocomplete';
 import Breadcrumbs from 'pages/Breadcrumbs';
+import Button from 'pages/Button';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -20,6 +21,10 @@ export default createBrowserRouter([
             {
                 path: '/breadcrumbs',
                 element: <Breadcrumbs />,
+            },
+            {
+                path: '/button',
+                element: <Button />,
             },
         ],
     },
