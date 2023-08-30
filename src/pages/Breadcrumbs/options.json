@@ -1,0 +1,16 @@
+[
+    {
+        "id": "auto",
+        "title": "Autocomplete",
+        "url": "/autocomplete"
+    },
+    {
+        "id": "select",
+        "title": "Select",
+        "url": "/select"
+    },
+    {
+        "id": "bread",
+        "title": "Breadcrumbs"
+    }
+]

@@ -1,0 +1,28 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.breadcrumbs
+    @extend %flex_wrap
+
+.crumb
+    @extend %flex_row
+    margin-right: 10px
+    color: $color-dark-1
+    font-weight: 500
+    &:last-child
+        color: $color-gray-2
+
+.link:hover
+    text-decoration-line: underline
+    text-underline-offset: 2px
+
+.separator
+    margin-left: 10px
+
+.size
+    &-small
+        font-size: 16px
+    &-medium
+        font-size: 18px
+    &-large
+        font-size: 20px
