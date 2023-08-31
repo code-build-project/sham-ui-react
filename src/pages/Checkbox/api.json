@@ -1,0 +1,42 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "boolean",
+            "default": "false",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "key-field",
+            "type": "string",
+            "default": "( required )",
+            "description": "Ключ идентифиактор компонента"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "size",
+            "type": "small | medium | large",
+            "default": "medium",
+            "description": "Размер компонента"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "boolean",
+            "description": "Событие срабатывает при изменении значения флага"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения заголовка флага"
+        }
+    ]
+}

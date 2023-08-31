@@ -13,7 +13,7 @@ type Props = {
     maxlength?: number,
     autocomplete?: string,
     children?: { left?: React.ReactNode, right?: React.ReactNode },
-    onClick?: React.MouseEventHandler<HTMLButtonElement>,
+    onClick?: React.MouseEventHandler,
     onFocus?: () => void,
     onBlur?: () => void,
     onInput?: (event: InputChangeEvent) => void,

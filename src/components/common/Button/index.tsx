@@ -4,7 +4,7 @@ import styles from 'components/common/Button/styles.module.sass';
 type Props = {
     className?: string,
     children?: React.ReactNode,
-    onClick?: React.MouseEventHandler<HTMLButtonElement>,
+    onClick?: React.MouseEventHandler,
 }
 
 function Button(prevProps: Props): JSX.Element {

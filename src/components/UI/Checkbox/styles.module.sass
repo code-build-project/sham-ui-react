@@ -1,0 +1,65 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.checkbox
+    @extend %flex_row-center
+    cursor: pointer
+
+.input
+    opacity: 0
+    width: 0
+
+.label
+    display: inline-flex
+    align-items: center
+    user-select: none
+    &:before
+        content: ''
+        display: inline-block
+        width: 15px
+        height: 15px
+        flex-shrink: 0
+        flex-grow: 0
+        cursor: pointer
+        border: 1px solid $color-gray-3
+        border-radius: 4px
+        background-repeat: no-repeat
+        background-position: center center
+        background-color: $color-white-1
+           
+.name
+    font-size: 14px
+    font-weight: 500
+    color: $color-dark-1
+    margin-left: 8px
+    line-height: 1px
+
+.input:hover + .label::before
+    background-color: $color-gray-4
+
+.input:checked + .label::before
+    border-color: $color-blue-1
+    background-color: transparent
+    background-image: url('../../../assets/icons/radioMark.svg')
+    background-size: 130% // TODO - в будущем удалить и заменить на иконку чекбокса
+
+.disabled
+    pointer-events: none
+    opacity: 0.8
+    cursor: default
+
+.size
+    &-small
+        .label::before
+            width: 12px
+            height: 12px
+        .name
+            font-size: 12px
+            margin-left: 6px
+    &-large
+        .label::before
+            width: 17px
+            height: 17px
+        .name
+            font-size: 16px
+            margin-left: 10px

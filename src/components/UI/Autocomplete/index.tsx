@@ -86,7 +86,7 @@ function Autocomplete(prevProps: Props): JSX.Element {
     // BLOCK "clear"
     const isIconClear = props.isClearable && props.value;
 
-    function clearField(event: React.MouseEvent<SVGSVGElement, MouseEvent>) {
+    function clearField(event: React.MouseEvent) {
         event.stopPropagation();
         updateValue('');
     }

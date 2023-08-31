@@ -1,0 +1,24 @@
+{
+    "text": { 
+        "id": "text",
+        "elementType": "input",
+        "title": "TEXT",
+        "placeholder": "My Checkbox"
+    },
+    "disabled": {
+        "id": "disable",
+        "elementType": "switch",
+        "title": "DISABLED",
+        "isInline": true
+    },
+    "size": { 
+        "id": "size",
+        "elementType": "radio",
+        "title": "SIZE",
+        "variantList": [
+            { "id": "small", "name": "Small" },
+            { "id": "medium", "name": "Medium" },
+            { "id": "large", "name": "Large" }
+        ]
+    }
+}
