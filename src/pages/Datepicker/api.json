@@ -1,0 +1,70 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "default": "—",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "placeholder",
+            "type": "string",
+            "default": "—",
+            "description": "Текст подсказки для пользователя"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "is-readonly",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки ввода"
+        },
+        {
+            "name": "is-error",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг отображения состояния ошибки"
+        },
+        {
+            "name": "message",
+            "type": "string",
+            "default": "—",
+            "description": "Сообщение под компонентом"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "string",
+            "description": "Событие срабатывает при изменении значения в поле"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения заголовка компонента"
+        },
+        {
+            "name": "left",
+            "default": "( icon-calendar )",
+            "description": "Слот для передачи элементов слева от поля"
+        },
+        {
+            "name": "right",
+            "default": "—",
+            "description": "Слот для передачи элементов справа от поля"
+        }
+    ]
+}

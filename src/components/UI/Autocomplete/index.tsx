@@ -86,10 +86,10 @@ function Autocomplete(prevProps: Props): JSX.Element {
     // BLOCK "clear"
     const isIconClear = props.isClearable && props.value;
 
-    function clearField(event: React.MouseEvent) {
+    const clearField = (event: React.MouseEvent) => {
         event.stopPropagation();
         updateValue('');
-    }
+    };
 
     return (
         <div className={`${styles['autocomplete']} ${props.className}`}>
