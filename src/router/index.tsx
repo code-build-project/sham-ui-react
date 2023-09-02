@@ -5,6 +5,7 @@ import Breadcrumbs from 'pages/Breadcrumbs';
 import Checkbox from 'pages/Checkbox';
 import Button from 'pages/Button';
 import Datepicker from 'pages/Datepicker';
+import FileInput from 'pages/FileInput';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -35,6 +36,10 @@ export default createBrowserRouter([
             {
                 path: '/datepicker',
                 element: <Datepicker />,
+            },
+            {
+                path: '/file-input',
+                element: <FileInput />,
             },
         ],
     },

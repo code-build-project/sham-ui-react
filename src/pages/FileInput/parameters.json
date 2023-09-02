@@ -1,0 +1,45 @@
+{
+    "label": { 
+        "id": "label",
+        "elementType": "input",
+        "title": "LABEL",
+        "placeholder": "Label"
+    },
+    "placeholder": { 
+        "id": "placeholder",
+        "elementType": "input",
+        "title": "PLACEHOLDER",
+        "placeholder": "My Input",
+        "isInline": true
+    },
+    "message": { 
+        "id": "message",
+        "elementType": "input",
+        "title": "MESSAGE",
+        "placeholder": "Message",
+        "isInline": true
+    },
+    "multiple": {
+        "id": "multiple",
+        "elementType": "switch",
+        "title": "MULTIPLE"
+    },
+    "disabled": {
+        "id": "disable",
+        "elementType": "switch",
+        "title": "DISABLED",
+        "isInline": true
+    },
+    "error": {
+        "id": "error",
+        "elementType": "switch",
+        "title": "ERROR",
+        "isInline": true
+    },
+    "accept": { 
+        "id": "accept",
+        "elementType": "input",
+        "title": "ACCEPT",
+        "placeholder": "example: .jpg, .png"
+    }
+}
