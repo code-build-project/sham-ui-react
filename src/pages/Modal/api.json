@@ -1,0 +1,67 @@
+{
+    "propList": [
+        {
+            "name": "title",
+            "type": "string",
+            "default": "Modal",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "text",
+            "type": "string",
+            "default": "Modal text",
+            "description": "Текст компонента"
+        },
+        {
+            "name": "textNo",
+            "type": "string",
+            "default": "No",
+            "description": "Текст кнопки"
+        },
+        {
+            "name": "textOk",
+            "type": "string",
+            "default": "Ok",
+            "description": "Текст кнопки"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@close",
+            "parameters": "void",
+            "description": "Событие срабатывает при закрытии окна"
+        },
+        {
+            "name": "@no",
+            "parameters": "void",
+            "description": "Событие срабатывает при нажатии на кнопку no"
+        },
+        {
+            "name": "@ok",
+            "parameters": "void",
+            "description": "Событие срабатывает при нажатии на кнопку ok"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "Modal text",
+            "description": "Дефолтный слот, для передачи текста модального окна"
+        },
+        {
+            "name": "title",
+            "default": "Modal",
+            "description": "Слот для передачи заголовка модального окна"
+        },
+        {
+            "name": "textNo",
+            "default": "No",
+            "description": "Слот для передачи текста кнопки"
+        },
+        {
+            "name": "textOk",
+            "default": "Ok",
+            "description": "Слот для передачи текста кнопки"
+        }
+    ]
+}

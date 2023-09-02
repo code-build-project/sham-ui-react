@@ -6,6 +6,7 @@ import Checkbox from 'pages/Checkbox';
 import Button from 'pages/Button';
 import Datepicker from 'pages/Datepicker';
 import FileInput from 'pages/FileInput';
+import Modal from 'pages/Modal';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -40,6 +41,10 @@ export default createBrowserRouter([
             {
                 path: '/file-input',
                 element: <FileInput />,
+            },
+            {
+                path: '/modal',
+                element: <Modal />,
             },
         ],
     },

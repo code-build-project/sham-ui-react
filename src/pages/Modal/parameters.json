@@ -1,0 +1,15 @@
+{
+    "title": { 
+        "id": "title",
+        "elementType": "input",
+        "title": "TITLE",
+        "placeholder": "Title"
+    },
+    "text": { 
+        "id": "text",
+        "elementType": "input",
+        "title": "TEXT",
+        "placeholder": "Text",
+        "isInline": true
+    }
+}
