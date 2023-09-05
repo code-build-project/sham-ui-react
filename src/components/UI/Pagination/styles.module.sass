@@ -1,0 +1,48 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.pagination
+    @extend %flex_row-center-center
+    font-size: 20px
+    font-weight: 500
+    color: $color-dark-1
+
+.prev, .next
+    min-width: 35px
+    max-width: 35px
+    height: 35px
+    fill: $color-dark-2
+    transform: rotate(90deg)
+    border: 1px solid $color-dark-2
+    border-radius: 8px
+    cursor: pointer
+    &:hover
+        border-color: $color-gray-1
+        fill: $color-gray-1
+
+.prev
+    margin-right: 10px
+
+.next
+    transform: rotate(270deg)
+    margin-left: 10px
+
+.step
+    @extend %flex_row-center-center
+    width: 40px
+    height: 40px
+    margin-right: 5px
+    cursor: pointer
+    border-radius: 50%
+    &:hover
+        background: $color-gray-4
+    &-active
+        background: $color-gray-3
+    &-ellipsis
+        margin: 0 20px
+
+.disabled
+    pointer-events: none
+    opacity: 0.8
+    border-color: $color-gray-2
+    fill: $color-gray-2

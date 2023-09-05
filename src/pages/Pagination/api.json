@@ -1,0 +1,24 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "number",
+            "default": "1",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "steps-length",
+            "type": "number",
+            "default": "5",
+            "description": "Количество шагов"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "number",
+            "description": "Событие срабатывает при изменении шага"
+        }
+    ],
+    "slotList": []
+}

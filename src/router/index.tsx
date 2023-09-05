@@ -7,6 +7,7 @@ import Button from 'pages/Button';
 import Datepicker from 'pages/Datepicker';
 import FileInput from 'pages/FileInput';
 import Modal from 'pages/Modal';
+import Pagination from 'pages/Pagination';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -45,6 +46,10 @@ export default createBrowserRouter([
             {
                 path: '/modal',
                 element: <Modal />,
+            },
+            {
+                path: '/pagination',
+                element: <Pagination />,
             },
         ],
     },

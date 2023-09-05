@@ -1,0 +1,14 @@
+{
+    "stepsLength": {
+        "id": "stepsLength",
+        "elementType": "radio",
+        "title": "LENGTH",
+        "variantList": [
+            { "id": 3, "name": "3" },
+            { "id": 5, "name": "5" },
+            { "id": 7, "name": "7" },
+            { "id": 9, "name": "9" },
+            { "id": 11, "name": "11" }
+        ]
+    }
+}
