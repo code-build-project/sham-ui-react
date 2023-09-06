@@ -9,6 +9,7 @@ import FileInput from 'pages/FileInput';
 import Modal from 'pages/Modal';
 import Pagination from 'pages/Pagination';
 import RadioButton from 'pages/RadioButton';
+import Select from 'pages/Select';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -55,6 +56,10 @@ export default createBrowserRouter([
             {
                 path: '/radio-button',
                 element: <RadioButton />,
+            },
+            {
+                path: '/select',
+                element: <Select />,
             },
         ],
     },

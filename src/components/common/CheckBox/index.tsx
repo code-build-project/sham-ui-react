@@ -16,18 +16,22 @@ function CheckBox(prevProps: Props): JSX.Element {
         ...prevProps,
     };
 
-    const updateValue = (value: boolean): void => {
-        props.updateValue(value);
+    const onChecked = (event: React.MouseEvent | React.ChangeEvent): void => {
+        event.preventDefault();
+        props.updateValue(!props.value);
     };
 
     return (
-        <div className={`${styles['checkbox']} ${props.className}`}>
+        <div
+            className={`${styles['checkbox']} ${props.className}`}
+            onClick={onChecked}
+        >
             <input
                 className={styles['input']}
                 id={props.keyField}
                 type="checkbox"
                 checked={props.value}
-                onChange={() => updateValue(!props.value)}
+                onChange={onChecked}
             />
 
             <label

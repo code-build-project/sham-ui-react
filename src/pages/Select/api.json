@@ -1,0 +1,104 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string | string[ ]",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "default": "—",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "placeholder",
+            "type": "string",
+            "default": "—",
+            "description": "Текст подсказки для пользователя"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "is-сlearable",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг отображения компонента очистки поля ввода"
+        },
+        {
+            "name": "message",
+            "type": "string",
+            "default": "—",
+            "description": "Сообщение под компонентом"
+        },
+        {
+            "name": "size",
+            "type": "small | medium | large",
+            "default": "medium",
+            "description": "Размер компонента"
+        },
+        {
+            "name": "variant",
+            "type": "default | outline | underline",
+            "default": "default",
+            "description": "Вариант внешнего вида компонента"
+        },
+        {
+            "name": "is-error",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг отображения состояния ошибки"
+        },
+        {
+            "name": "is-multiple",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг множественного выбора опций"
+        },
+        {
+            "name": "options",
+            "type": "{ id: string, value: string }[]",
+            "default": "[ ]",
+            "description": "Опции для выпадающего списка"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "id: string | string[ ]",
+            "description": "Событие срабатывает при выборе опции"
+        },
+        {
+            "name": "@focus",
+            "parameters": "void",
+            "description": "Событие срабатывает при фокусировке поля"
+        },
+        {
+            "name": "@blur",
+            "parameters": "void",
+            "description": "Событие срабатывает при расфокусировке поля"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения заголовка компонента"
+        },
+        {
+            "name": "left",
+            "default": "—",
+            "description": "Слот для передачи элементов слева от поля"
+        },
+        {
+            "name": "right",
+            "default": "—",
+            "description": "Слот для передачи элементов справа от поля"
+        }
+    ]
+}

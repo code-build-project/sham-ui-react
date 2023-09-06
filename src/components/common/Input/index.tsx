@@ -13,7 +13,7 @@ type Props = {
     maxlength?: number,
     autocomplete?: string,
     children?: { left?: React.ReactNode, right?: React.ReactNode },
-    onClick?: React.MouseEventHandler,
+    onClick?: () => void,
     onFocus?: () => void,
     onBlur?: () => void,
     onInput?: (event: InputChangeEvent) => void,
@@ -29,6 +29,7 @@ function Input(prevProps: Props): JSX.Element {
         isReadonly: false,
         maxlength: undefined,
         autocomplete: 'on',
+        onClick: () => {},
         onFocus: () => {},
         onBlur: () => {},
         onInput: () => {},
@@ -42,6 +43,7 @@ function Input(prevProps: Props): JSX.Element {
 
     const clickInput = () => {
         inputRef.current?.focus();
+        props.onClick();
     };
 
     const onFocus = () => {
