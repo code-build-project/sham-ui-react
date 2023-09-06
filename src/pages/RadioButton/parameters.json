@@ -1,0 +1,14 @@
+{
+    "label": { 
+        "id": "label",
+        "elementType": "input",
+        "title": "LABEL",
+        "placeholder": "Label"
+    },
+    "column": {
+        "id": "column",
+        "elementType": "switch",
+        "title": "COLUMN",
+        "isInline": true
+    }
+}

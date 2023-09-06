@@ -1,0 +1,48 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string | number",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "key-field",
+            "type": "string",
+            "default": "( required )",
+            "description": "Ключ/id компонента"
+        },
+        {
+            "name": "radio-list",
+            "type": "{ id: string | number, name: string }[ ]",
+            "default": "[ ]",
+            "description": "Список опций"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "default": "—",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "is-column",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг вертикального отображения элементов"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "string | number",
+            "description": "Событие срабатывает при выборе флажка"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения заголовка компонента"
+        }
+    ]
+}
