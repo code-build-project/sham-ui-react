@@ -10,6 +10,7 @@ import Modal from 'pages/Modal';
 import Pagination from 'pages/Pagination';
 import RadioButton from 'pages/RadioButton';
 import Select from 'pages/Select';
+import Table from 'pages/Table';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -60,6 +61,10 @@ export default createBrowserRouter([
             {
                 path: '/select',
                 element: <Select />,
+            },
+            {
+                path: '/table',
+                element: <Table />,
             },
         ],
     },

@@ -1,0 +1,8 @@
+{
+    "height": { 
+        "id": "height",
+        "elementType": "input",
+        "title": "HEIGHT",
+        "placeholder": "Example: 130px"
+    }
+}

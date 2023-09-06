@@ -1,0 +1,30 @@
+{
+    "propList": [
+        {
+            "name": "headers",
+            "type": "{ id: string, title: string }[ ]",
+            "default": "( required )",
+            "description": "Заголовки таблицы"
+        },
+        {
+            "name": "items",
+            "type": "{ [name: string]: string }[ ]",
+            "default": "( required )",
+            "description": "Данные для таблицы"
+        },
+        {
+            "name": "height",
+            "type": "string",
+            "default": "—",
+            "description": "Высота таблицы"
+        }
+    ],
+    "eventList": [],
+    "slotList": [
+        {
+            "name": "[header.id]",
+            "default": "—",
+            "description": "Слот для кастомизации ячеек таблицы"
+        }
+    ]
+}
