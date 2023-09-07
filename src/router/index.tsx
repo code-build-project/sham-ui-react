@@ -13,6 +13,7 @@ import Select from 'pages/Select';
 import Table from 'pages/Table';
 import Tabs from 'pages/Tabs';
 import Textarea from 'pages/Textarea';
+import TextField from 'pages/TextField';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -75,6 +76,10 @@ export default createBrowserRouter([
             {
                 path: '/textarea',
                 element: <Textarea />,
+            },
+            {
+                path: '/text-field',
+                element: <TextField />,
             },
         ],
     },

@@ -1,0 +1,133 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string | number",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "default": "—",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "placeholder",
+            "type": "string",
+            "default": "—",
+            "description": "Текст подсказки для пользователя"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "type",
+            "type": "string",
+            "default": "text",
+            "description": "Тип текстового поля"
+        },
+        {
+            "name": "maxlength",
+            "type": "string",
+            "default": "—",
+            "description": "Максимальное количество символов для ввода"
+        },
+        {
+            "name": "autocomplete",
+            "type": "string",
+            "default": "on",
+            "description": "Автозаполнение поля"
+        },
+        {
+            "name": "is-readonly",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки ввода"
+        },
+        {
+            "name": "is-сlearable",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг отображения компонента очистки поля ввода"
+        },
+        {
+            "name": "message",
+            "type": "string",
+            "default": "—",
+            "description": "Сообщение под компонентом"
+        },
+        {
+            "name": "size",
+            "type": "small | medium | large",
+            "default": "medium",
+            "description": "Размер компонента"
+        },
+        {
+            "name": "variant",
+            "type": "default | outline | underline",
+            "default": "default",
+            "description": "Вариант внешнего вида компонента"
+        },
+        {
+            "name": "format",
+            "type": "default | number | letter | latin | cyrillic",
+            "default": "default",
+            "description": "Формат ввода"
+        },
+        {
+            "name": "is-error",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг отображения состояния ошибки"
+        },
+        {
+            "name": "is-password",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг сокрытия видимости ввода"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "string | number",
+            "description": "Событие которое срабатывает при изменении значения в поле"
+        },
+        {
+            "name": "@input",
+            "parameters": "event: Event",
+            "description": "Событие которое срабатывает при изменении значения в поле"
+        },
+        {
+            "name": "@focus",
+            "parameters": "void",
+            "description": "Событие которое срабатывает при фокусировке"
+        },
+        {
+            "name": "@blur",
+            "parameters": "void",
+            "description": "Событие которое срабатывает при расфокусировке"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения для заголовка поля"
+        },
+        {
+            "name": "left",
+            "default": "—",
+            "description": "Слот для передачи элементов слева от поля"
+        },
+        {
+            "name": "right",
+            "default": "—",
+            "description": "Слот для передачи элементов справа от поля"
+        }
+    ]
+}
