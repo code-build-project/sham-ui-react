@@ -1,0 +1,36 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "tabs",
+            "type": "{ id: string, title: string }[ ]",
+            "default": "( required )",
+            "description": "Опции для навигации"
+        },
+        {
+            "name": "is-column",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг переключения навигации в вертикальное направление"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "string",
+            "description": "Событие срабатывает при переключении навигации"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "[tab.id]",
+            "default": "—",
+            "description": "Слот для кастомизации элемента навигации"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "movies",
+        "title": "Movies"
+    },
+    {
+        "id": "books",
+        "title": "Books"
+    },
+    {
+        "id": "music",
+        "title": "Music"
+    },
+    {
+        "id": "shop",
+        "title": "Shop"
+    }
+]

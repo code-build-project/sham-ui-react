@@ -1,0 +1,23 @@
+@import 'assets/sass/flex.sass'
+@import 'assets/sass/colors.sass'
+
+.tabs
+    @extend %flex_row
+    color: $color-dark-1
+
+.tab
+    font-size: 18px
+    color: $color-dark-1
+    margin-right: 20px
+    cursor: pointer
+    &-active
+        color: $color-blue-1
+        border-bottom: 2px solid $color-blue-1
+
+.tabs-column
+    @extend %flex_column
+    .tab
+        margin-right: 0
+        margin-top: 10px
+        &:first-child
+            margin-top: 0

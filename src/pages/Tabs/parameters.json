@@ -1,0 +1,7 @@
+{
+    "column": {
+        "id": "column",
+        "elementType": "switch",
+        "title": "COLUMN"
+    }
+}
