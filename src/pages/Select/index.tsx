@@ -16,7 +16,7 @@ import type { TypeParameter, TypeChangeData } from 'components/common/Playground
 const api: TypeApiTable = apiJSON;
 const options: TypeOption[] = optionsJSON;
 const parameters: TypeParameter = parametersJSON;
-const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShSelect/index.vue';
+const gitLink: string = 'https://github.com/code-build-project/sham-ui-react/blob/main/src/components/UI/Select/index.tsx';
 
 type TypeState = {
     placeholder: string,

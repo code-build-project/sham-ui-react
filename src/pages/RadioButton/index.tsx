@@ -14,7 +14,7 @@ import type { TypeParameter } from 'components/common/Playground/types';
 const api: TypeApiTable = apiJSON;
 const options: { id: number, name: string }[] = optionsJSON;
 const parameters: TypeParameter = parametersJSON;
-const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShRadioButton/index.vue';
+const gitLink: string = 'https://github.com/code-build-project/sham-ui-react/blob/main/src/components/UI/RadioButton/index.tsx';
 
 type TypeState = {
     value: string | number,

@@ -15,7 +15,7 @@ import type { TypeParameter } from 'components/common/Playground/types';
 const api: TypeApiTable = apiJSON;
 const options: string[] = optionsJSON;
 const parameters: TypeParameter = parametersJSON;
-const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShAutocomplete/index.vue';
+const gitLink: string = 'https://github.com/code-build-project/sham-ui-react/blob/main/src/components/UI/Autocomplete/index.tsx';
 
 type TypeState = {
     value: string,

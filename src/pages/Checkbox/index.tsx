@@ -12,7 +12,7 @@ import type { TypeParameter } from 'components/common/Playground/types';
 
 const api: TypeApiTable = apiJSON;
 const parameters: TypeParameter = parametersJSON;
-const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShCheckbox/index.vue';
+const gitLink: string = 'https://github.com/code-build-project/sham-ui-react/blob/main/src/components/UI/Checkbox/index.tsx';
 
 type TypeState = {
     value: boolean,

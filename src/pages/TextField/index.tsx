@@ -13,7 +13,7 @@ import type { TypeParameter } from 'components/common/Playground/types';
 
 const api: TypeApiTable = apiJSON;
 const parameters: TypeParameter = parametersJSON;
-const gitLink: string = 'https://github.com/code-build-project/sham-ui/blob/main/src/components/UI/ShTextField/index.vue';
+const gitLink: string = 'https://github.com/code-build-project/sham-ui-react/blob/main/src/components/UI/TextField/index.tsx';
 
 type TypeState = {
     value: number | string,
