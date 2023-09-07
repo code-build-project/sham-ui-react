@@ -1,0 +1,24 @@
+{
+    "text": { 
+        "id": "text",
+        "elementType": "input",
+        "title": "TOOLTIP TEXT",
+        "placeholder": "My tooltip"
+    },
+    "show": {
+        "id": "show",
+        "elementType": "switch",
+        "title": "SHOW ALWAYS"
+    },
+    "position": { 
+        "id": "position",
+        "elementType": "radio",
+        "title": "POSITION",
+        "variantList": [
+            { "id": "top", "name": "Top" },
+            { "id": "right", "name": "Right" },
+            { "id": "bottom", "name": "Bottom" },
+            { "id": "left", "name": "Left" }
+        ]
+    }
+}

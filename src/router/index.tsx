@@ -14,6 +14,7 @@ import Table from 'pages/Table';
 import Tabs from 'pages/Tabs';
 import Textarea from 'pages/Textarea';
 import TextField from 'pages/TextField';
+import Tooltip from 'pages/Tooltip';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -80,6 +81,10 @@ export default createBrowserRouter([
             {
                 path: '/text-field',
                 element: <TextField />,
+            },
+            {
+                path: '/tooltip',
+                element: <Tooltip />,
             },
         ],
     },

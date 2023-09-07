@@ -1,0 +1,24 @@
+{
+    "propList": [
+        {
+            "name": "is-show",
+            "type": "boolean | undefined",
+            "default": "undefined",
+            "description": "Флаг для ручного управления тултипом. По дефолту undefined"
+        },
+        {
+            "name": "position",
+            "type": "top | right | bottom | left",
+            "default": "right",
+            "description": "Позиция тултипа относительно родительского элемента"
+        }
+    ],
+    "eventList": [],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "Tooltip",
+            "description": "Дефолтный слот, для передачи значения тултипа"
+        }
+    ]
+}
