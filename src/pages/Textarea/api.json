@@ -1,0 +1,76 @@
+{
+    "propList": [
+        {
+            "name": "model-value",
+            "type": "string",
+            "default": "—",
+            "description": "Значение компонента"
+        },
+        {
+            "name": "label",
+            "type": "string",
+            "default": "—",
+            "description": "Заголовок компонента"
+        },
+        {
+            "name": "placeholder",
+            "type": "string",
+            "default": "—",
+            "description": "Текст подсказки для пользователя"
+        },
+        {
+            "name": "is-disabled",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки работы с компонентом"
+        },
+        {
+            "name": "is-readonly",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг блокировки ввода"
+        },
+        {
+            "name": "is-spellcheck",
+            "type": "boolean",
+            "default": "false",
+            "description": "Флаг проверки грамматического ввода"
+        },
+        {
+            "name": "resize",
+            "type": "none | both | horizontal | vertical",
+            "default": "both",
+            "description": "Свойство resize указывает, можно ли изменить размер элемента"
+        },
+        {
+            "name": "maxlength",
+            "type": "string",
+            "default": "—",
+            "description": "Максимальное количество символов для ввода"
+        }
+    ],
+    "eventList": [
+        {
+            "name": "@update:modelValue",
+            "parameters": "string",
+            "description": "Событие срабатывает при изменении значения в поле"
+        },
+        {
+            "name": "@focus",
+            "parameters": "void",
+            "description": "Событие срабатывает при фокусировке поля"
+        },
+        {
+            "name": "@blur",
+            "parameters": "void",
+            "description": "Событие срабатывает при расфокусировке поля"
+        }
+    ],
+    "slotList": [
+        {
+            "name": "(default)",
+            "default": "—",
+            "description": "Дефолтный слот, для передачи значения заголовка компонента"
+        }
+    ]
+}

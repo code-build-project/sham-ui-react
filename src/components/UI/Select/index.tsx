@@ -173,7 +173,7 @@ function Select(prevProps: Props): JSX.Element {
                     {props.children || props.label}
                 </div>
             }
-            {isIconClear}
+
             <Input
                 className={componentClasses}
                 value={valueInput}

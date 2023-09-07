@@ -1,0 +1,43 @@
+{
+    "readonly": {
+        "id": "readonly",
+        "elementType": "switch",
+        "title": "READONLY"
+    },
+    "disabled": {
+        "id": "disable",
+        "elementType": "switch",
+        "title": "DISABLED",
+        "isInline": true
+    },
+    "spellcheck": {
+        "id": "spellcheck",
+        "elementType": "switch",
+        "title": "SPELLCHECK",
+        "isInline": true
+    },
+    "label": { 
+        "id": "label",
+        "elementType": "input",
+        "title": "LABEL",
+        "placeholder": "Label"
+    },
+    "placeholder": { 
+        "id": "placeholder",
+        "elementType": "input",
+        "title": "PLACEHOLDER",
+        "placeholder": "Placeholder",
+        "isInline": true
+    },
+    "resize": {
+        "id": "resize",
+        "elementType": "radio",
+        "title": "RESIZE",
+        "variantList": [
+            { "id": "none", "name": "None" },
+            { "id": "both", "name": "Both" },
+            { "id": "horizontal", "name": "Horizontal" },
+            { "id": "vertical", "name": "Vertical" }
+        ]
+    }
+}

@@ -12,6 +12,7 @@ import RadioButton from 'pages/RadioButton';
 import Select from 'pages/Select';
 import Table from 'pages/Table';
 import Tabs from 'pages/Tabs';
+import Textarea from 'pages/Textarea';
 import { createBrowserRouter } from 'react-router-dom';
 
 export default createBrowserRouter([
@@ -70,6 +71,10 @@ export default createBrowserRouter([
             {
                 path: '/tabs',
                 element: <Tabs />,
+            },
+            {
+                path: '/textarea',
+                element: <Textarea />,
             },
         ],
     },
